@@ -4,9 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/painting.dart';
 import 'package:sleek_circular_slider/sleek_circular_slider.dart';
+import 'package:draw_graph/draw_graph.dart';
+import 'package:draw_graph/models/feature.dart';
+
 // ignore: unused_import
 import 'nouvelle_page.dart' show NouvellePage;
-
+// ignore: unused_import
+import 'Backend.dart';
 
 class MySleekSliders extends StatelessWidget {
   const MySleekSliders({Key? key}) : super(key: key);
@@ -19,6 +23,9 @@ class MySleekSliders extends StatelessWidget {
     );
   }
 }
+
+var donnee = sendRequest();
+
 class SleekSlider extends StatelessWidget {
 
 
@@ -28,7 +35,7 @@ class SleekSlider extends StatelessWidget {
      [Colors.green, Colors.yellow, Colors.redAccent],shadowMaxOpacity: 20.0),
      infoProperties: InfoProperties(topLabelText: 'Humidité au sol'),
     ),
-    initialValue: 60,
+    initialValue: donnee["hs"],
     onChange: (double value){
       // ignore: avoid_print
       print(value);
@@ -41,7 +48,7 @@ class SleekSlider extends StatelessWidget {
      [Colors.green, Colors.yellow, Colors.redAccent],shadowMaxOpacity: 20.0),
      infoProperties: InfoProperties(topLabelText: "Humidité de l'air."),
     ),
-    initialValue: 60,
+    initialValue: donnee["ha"],
     onChange: (double value){
       // ignore: avoid_print
       print(value);
@@ -54,7 +61,7 @@ class SleekSlider extends StatelessWidget {
      [Colors.green, Colors.yellow, Colors.redAccent ],shadowMaxOpacity: 20.0),
      infoProperties: InfoProperties(topLabelText: "Temperature"),
     ),
-    initialValue: 60,
+    initialValue: donnee["temp"],
     onChange: (double value){
       // ignore: avoid_print
       print(value);
@@ -66,7 +73,7 @@ class SleekSlider extends StatelessWidget {
      [Colors.green, Colors.yellow, Colors.redAccent],shadowMaxOpacity: 20.0),
      infoProperties: InfoProperties(topLabelText: 'Luminosité'),
     ),
-    initialValue: 60,
+    initialValue: donnee["lum"],
     onChange: (double value){
       // ignore: avoid_print
       print(value);
@@ -128,7 +135,9 @@ class SleekSlider extends StatelessWidget {
         ),
       ),
     );
-    
+
   }
 }
+ 
+  
 

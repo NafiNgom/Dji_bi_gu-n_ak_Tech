@@ -98,6 +98,14 @@ class _NouvellePageState extends State<NouvellePage> {
                       
                      ),
                    
+                     Text(
+                         'Réglage',
+                         textAlign: TextAlign.center,
+                         style: TextStyle(
+                            fontSize: 22.4
+                         ),
+                      ),
+                     
                     
                      Text('wifi', style: TextStyle(color: Colors.white),)
                    ],
@@ -120,7 +128,7 @@ class _NouvellePageState extends State<NouvellePage> {
                      ),
                    
                      Text(
-                         'Graphique',
+                         'A Propos',
                          textAlign: TextAlign.center,
                          style: TextStyle(
                             fontSize: 22.4

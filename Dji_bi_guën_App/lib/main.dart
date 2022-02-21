@@ -80,20 +80,23 @@ class _MyHomePageState extends State<MyHomePage> {
                  child: Row(
                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                    children: [
-                     Icon(
+                     const Icon(
                        Icons.  storage,
                       
                      ),
-                       ElevatedButton(onPressed: versNouvellePage, child: const Text('Plante')),
-                    
-                   
-                     Text(
+                    TextButton(
+                      onPressed: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>SleekSlider()));
+                      }, 
+                      child: const Text(
                          'Tableau de bord',
                          textAlign: TextAlign.center,
                          style: TextStyle(
                             fontSize: 22.4
                          ),
                       ),
+                      ),
+                     
                      
                      Text('wifi', style: TextStyle(color: Colors.white),)
                    ],
@@ -114,17 +117,22 @@ class _MyHomePageState extends State<MyHomePage> {
                        Icons.  storage,
                       
                      ),
-                   
-                     Text(
-                         'Controller ma plant',
+                   TextButton(
+                      onPressed: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>NouvellePage()));
+                      },
+                      child: const Text(
+                         'Réglage',
                          textAlign: TextAlign.center,
                          style: TextStyle(
                             fontSize: 22.4
                          ),
                       ),
-                     
+                   ),
+                   
                      Text('wifi', style: TextStyle(color: Colors.white),)
-                   ],
+    ],
+                 
                  
                  ),
                )
@@ -144,7 +152,7 @@ class _MyHomePageState extends State<MyHomePage> {
                      ),
                    
                      Text(
-                         'Graphique',
+                         'A Propos',
                          textAlign: TextAlign.center,
                          style: TextStyle(
                             fontSize: 22.4
